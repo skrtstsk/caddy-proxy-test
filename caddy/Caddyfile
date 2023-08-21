@@ -1,0 +1,8 @@
+{
+	http_port 8080
+}
+
+:4000 {
+	header Content-Type text/html
+	respond "Hello, world!"
+}
