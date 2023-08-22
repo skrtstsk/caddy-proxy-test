@@ -1,5 +1,9 @@
 import os
 import shutil
+import logging
+
+logging.basicConfig(level=logging.INFO, filename="C:/Users/katya/pythonProject/caddy-proxy-test/deleting.log", filemode="w",
+                    format="%(asctime)s %(levelname)s %(message)s", datefmt='%H:%M:%S')
 
 
 def delete_large_folders(path, size_limit):
@@ -10,7 +14,8 @@ def delete_large_folders(path, size_limit):
             folder_size += os.path.getsize(filepath)
         if folder_size > size_limit * 1024:
             shutil.rmtree(foldername)
-            print(foldername + " deleted")
+            logging.info("Deleted")
+        else:
+            logging.info("NOT deleted")
 
-
-delete_large_folders("C:/Users/katya/Downloads/test", 100)
+delete_large_folders("C:/Users/katya/Downloads/test", 1)
