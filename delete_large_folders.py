@@ -10,10 +10,9 @@ def check_large_folders(path, size_limit):
             folder_size += os.path.getsize(filepath)
         if folder_size > size_limit * 1024 * 1024:
             print(os.path.split(os.path.split(filepath)[0])[1], "500")
-        else:
             count += 1
     if count == 0:
-        return 200
+        print("200")
 
 
 check_large_folders("C:/Users/katya/Downloads/test", 1)  # размер в Мб
